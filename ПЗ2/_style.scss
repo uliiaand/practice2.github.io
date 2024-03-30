@@ -1,0 +1,511 @@
+@font-face {
+    font-family: 'PoppinsL';
+    src: url(/fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: 'PoppinsR';
+    src: url(/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'LegquinneL';
+    src: url(/fonts/legquinne-light.otf);
+}
+
+@font-face {
+    font-family: 'Wano-Quin';
+    src: url(/fonts/wano-quin-wano-quin-regular-400.ttf);
+}
+
+@mixin fontz($fz, $ff) {
+    font-size: $fz;
+    font-family: $ff;
+}
+
+$primary-color: #1C1C1C;
+$secondary-color: #757575;
+$dark-bc: #ffffff;
+
+%h2-settings {
+    @include fontz(56px, 'LegquinneL');
+    color: $primary-color;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin:0;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #F9F9F7;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template: minmax(100px, auto) 1 fr minmax(90px, auto) / 1fr;
+    grid-template-areas: 
+        "header"
+        "content"
+        "footer";
+}
+.header {
+    grid-area: header;
+    padding: 32px 80px;
+    display: grid;
+    grid-template: 1fr / 1fr minmax(auto, 310px) minmax(auto, 310px) 1fr;
+    align-items: center;
+
+		&__logo {
+            img {
+                width: 65%;
+            }
+            grid-column: 1 / 2;
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            grid-template: 40px / 80px;
+            @include fontz(23px, 'PoppinsR');
+            color: $primary-color;
+		}
+
+		&__menu {
+            grid-column: 2 / 4;
+        }
+
+		&__list {
+            list-style: none;
+            display: grid;
+            grid-auto-flow: column;
+		}
+
+		&__link {
+            @include fontz(18px, 'PoppinsL');
+            color: $primary-color;
+            text-decoration: none;
+            &_bold {
+                @include fontz(18px, 'PoppinsR');
+                color: $primary-color;
+                text-decoration: none;
+            }
+		}
+
+        a:hover {
+            color: $primary-color;
+            font-size: 20px;
+            color: #d39c4a;
+        }
+
+        &__icons {
+            justify-self: end;
+            display: grid;
+            grid-template: 1fr / 60px 60px 60px;
+            align-items: center;
+        }
+
+        &__icon1 {
+            cursor: pointer;
+        }
+        &__icon2 {
+            cursor: pointer;
+        }
+        &__icon3 {
+            cursor: pointer;
+        }
+}
+
+.main {
+    padding: 44px 80px;
+}
+.content {
+
+		&__collections {
+            margin-top: 114px;
+            margin-bottom: 120px;
+		}
+
+		&__products {
+            background-color: cover;
+            padding: 44px 80px;
+            margin-left: -80px;
+            margin-right: -85px;
+		}
+
+		&__categories {
+            margin-bottom: 200px;
+            padding-top: 150px;
+		}
+
+		&__info {
+            background-color: cover;
+            margin-left: -87px;
+            margin-right: -88px;
+            padding: 170px 80px;
+		}
+}
+.head {
+
+		&__title {
+            padding-top: 124px;
+            width: 45%;
+		}
+
+		&__subtitle {
+            color: $secondary-color;
+            @include fontz(26px, 'PoppinsL');
+            width: 50%;
+            padding-top: 20px;
+		}
+
+        &__mainimg {
+            float: right;
+            margin-top: -645px;
+            width: 42%;
+        }
+
+        &__btn {
+            margin-top: 70px;
+            margin-bottom: 112px;
+        }
+
+		&__end {
+            img{
+                width: 140%;
+                margin-left: -80px;
+            }
+		}
+}
+
+@media (max-width: 1440px) {
+    .head {
+            &__mainimg {
+                width: 50%;
+                margin-top: -550px;
+            }
+            &__end {
+                img {
+                    width: 112.5%;
+                }
+            }
+    }
+}
+
+.collections {
+
+        &__top {
+            display: grid;
+            grid-template: 1fr / 1fr 70px 70px;
+            align-items: center;
+        }
+
+		&__title {
+            @extend %h2-settings;
+		}
+
+		&__more {
+            @include fontz(20px, 'PoppinsR');
+		}
+
+		&__arrow {
+		}
+
+		&__items {
+            margin-top: 20px;
+            display: grid;
+            column-gap: 180px;
+            row-gap: 25px;
+            grid-template: 450px 450px / 290px 290px 290px 290px;
+            &_bigimg {
+                grid-column: span 2;
+                grid-row: span 2;
+                img {
+                    width: 90%;
+                }
+            }
+		}
+
+        @media (max-width: 1440px) {
+            .collections {
+                    &__items {
+                        column-gap: 60px;
+                        row-gap: 75px;
+                        grid-template: 350px 350px / 270px 270px 270px 270px;
+                        &_bigimg {
+                            width: 100%;
+                        }
+                    }
+
+                    &__item {
+                        grid-template: 290px 1fr minmax(25px, auto)/ 1fr;
+                        img {
+                            width: 100%;
+                        }
+                    }
+            }
+        }
+
+        &__buy {
+            display: grid;
+            grid-template: 1fr / 240px 1fr;
+        }
+
+		&__item {
+            display: grid;
+            grid-auto-flow: row;
+            grid-template: 340px 1fr minmax(25px, auto)/ 1fr;
+            row-gap: 10px;
+		}
+
+		&__image img{
+            width: 110%;
+		}
+
+		&__name {
+            @include fontz(21px, 'PoppinsR');
+            text-decoration: none;
+            color: $primary-color;
+		}
+
+		&__price {
+            @include fontz(19px, 'PoppinsR');
+            text-decoration: none;
+            color: $primary-color;
+		}
+
+}
+.products {
+    background-color: #2B2B2B;
+    padding-top: 100px;
+
+		&__title {
+            @include fontz(56px, 'Wano-Quin');
+            color: $dark-bc;
+            font-weight: 500;
+		}
+
+        &__subtitle {
+            @include fontz(20px, 'PoppinsL');
+            color: $dark-bc;
+            margin-top: -20px;
+        }
+
+		&__arrow {
+            margin-left: 91%;
+            margin-top: -65px;
+            cursor: pointer;
+		}
+
+		&__items {
+            margin-top: 65px;
+            margin-bottom: 171px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+
+        &__buy {
+            display: grid;
+            grid-template: 1fr / 320px 1fr;
+            img {
+                width: 40%;
+            }
+        }
+
+		&__item {
+            display: grid;
+            grid-auto-flow: row;
+            grid-template: 415px 1fr minmax(25px, auto)/ 1fr;
+            row-gap: -10px;
+		}
+
+        @media (max-width:1440px) {
+            &__item {
+                grid-template: 315px 1fr minmax(25px, auto)/ 1fr;
+            }
+
+            &__buy {
+                grid-template: 1fr / 235px 1fr;
+                img {
+                    width: 40%;
+                }
+            }
+        }
+
+		&__image img{
+            width: 88%;
+		}
+
+		&__name {
+            @include fontz(21px, 'PoppinsR');
+            text-decoration: none;
+            color: $dark-bc;
+		}
+
+		&__price {
+            @include fontz(19px, 'PoppinsL');
+            text-decoration: none;
+            color: $dark-bc;
+		}
+
+}
+
+.categories {
+
+		&__title {
+            @extend %h2-settings;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+    
+        &__items {
+            display: grid;
+            grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr;
+		}
+
+		&__item {
+            text-align: center;
+		}
+
+		&__image img{
+                width: 85%;
+		}
+
+		&__name {
+            @include fontz(21px, 'PoppinsR');
+            text-decoration: none;
+            color: $primary-color;
+		}
+        a:hover {
+            color: $primary-color;
+            font-size: 20px;
+            color: #d39c4a;
+        }
+}
+.info {
+    background-color: #fff;
+
+		&__items {
+            display: grid;
+            grid-template: 92px 238px 270px 259px 88px / 20% 16% 20% 20% 18.2%;
+            column-gap: 25px;
+            row-gap: 25px;
+		}
+
+		&__item {
+			&_big {
+                grid-column: span 2;
+                grid-row: span 2 / 4;
+                img {
+                    width: 100%;
+                }
+			}
+            &_p2 {
+                grid-column: 3 / 4;
+                img {
+                    width: 100%;
+                }
+            }
+            &_p3 {
+                grid-area: 3 / 3 / 4 / 4;
+                align-self: center;
+                justify-self: center;
+                img {
+                    width: 100%;
+                }
+            }
+            &_p4 {
+                grid-area: 4 / 3 / 6 / 4;
+                img {
+                    width: 100%;
+                }
+            }
+		}
+
+        &__itemother {
+            img {
+                width: 198.5%;
+            }
+            display: grid;
+            grid-auto-flow: row;
+            row-gap: 25px;
+            margin-top: 117px;
+            
+        }
+        @media (max-width: 1440px) {
+            &__itemother {
+                img {
+                    width: 190.5%;
+                    height: 103%;
+                }
+                row-gap: 35px;
+            }
+            &__items {
+                grid-template: 92px 140px 270px 135px 97px / 20% 16% 20% 20% 16%;
+            }
+        }
+        &__text {
+            @include fontz(22px, 'PoppinsL');
+            color: #888888;
+        }
+
+		&__image {
+		}
+
+		&__name {
+            @include fontz(24px, 'PoppinsL');
+            color: $primary-color;
+            text-decoration: none;
+		}
+
+        &__arrow {
+            text-decoration: none;
+            img {
+                width: 6%;
+            }
+		}
+
+}
+
+.footer {
+    background-color: #2A2A2A;
+    background-color: cover;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -50px;
+    padding: 30px 75px 30px 75px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template: 1fr / 1fr minmax(auto, 637px) 1fr;
+
+        &__logo{
+            justify-self: start;
+            img {
+                width: 65%;
+            }
+            grid-column: 1 / 2;
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            grid-template: 40px / 80px;
+            @include fontz(23px, 'PoppinsR');
+            color: $dark-bc;
+        }
+
+		&__txt {
+            @include fontz(14px, 'PoppinsL');
+            color: $dark-bc;
+		}
+
+        &__icons {
+            display: grid;
+            grid-template: 1fr / 40px 40px 40px;
+            justify-self: end;
+        }
+
+}

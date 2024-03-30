@@ -1,0 +1,432 @@
+@font-face {
+  font-family: "PoppinsL";
+  src: url(/fonts/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: "PoppinsR";
+  src: url(/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "LegquinneL";
+  src: url(/fonts/legquinne-light.otf);
+}
+@font-face {
+  font-family: "Wano-Quin";
+  src: url(/fonts/wano-quin-wano-quin-regular-400.ttf);
+}
+.categories__title, .collections__title {
+  font-size: 56px;
+  font-family: "LegquinneL";
+  color: #1C1C1C;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #F9F9F7;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template: minmax(100px, auto) 1 fr minmax(90px, auto)/1fr;
+  grid-template-areas: "header" "content" "footer";
+}
+
+.header {
+  grid-area: header;
+  padding: 32px 80px;
+  display: grid;
+  grid-template: 1fr/1fr minmax(auto, 310px) minmax(auto, 310px) 1fr;
+  align-items: center;
+}
+.header__logo {
+  grid-column: 1/2;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-template: 40px/80px;
+  font-size: 23px;
+  font-family: "PoppinsR";
+  color: #1C1C1C;
+}
+.header__logo img {
+  width: 65%;
+}
+.header__menu {
+  grid-column: 2/4;
+}
+.header__list {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+}
+.header__link {
+  font-size: 18px;
+  font-family: "PoppinsL";
+  color: #1C1C1C;
+  text-decoration: none;
+}
+.header__link_bold {
+  font-size: 18px;
+  font-family: "PoppinsR";
+  color: #1C1C1C;
+  text-decoration: none;
+}
+.header a:hover {
+  color: #1C1C1C;
+  font-size: 20px;
+  color: #d39c4a;
+}
+.header__icons {
+  justify-self: end;
+  display: grid;
+  grid-template: 1fr/60px 60px 60px;
+  align-items: center;
+}
+.header__icon1 {
+  cursor: pointer;
+}
+.header__icon2 {
+  cursor: pointer;
+}
+.header__icon3 {
+  cursor: pointer;
+}
+
+.main {
+  padding: 44px 80px;
+}
+
+.content__collections {
+  margin-top: 114px;
+  margin-bottom: 120px;
+}
+.content__products {
+  background-color: cover;
+  padding: 44px 80px;
+  margin-left: -80px;
+  margin-right: -85px;
+}
+.content__categories {
+  margin-bottom: 200px;
+  padding-top: 150px;
+}
+.content__info {
+  background-color: cover;
+  margin-left: -87px;
+  margin-right: -88px;
+  padding: 170px 80px;
+}
+
+.head__title {
+  padding-top: 124px;
+  width: 45%;
+}
+.head__subtitle {
+  color: #757575;
+  font-size: 26px;
+  font-family: "PoppinsL";
+  width: 50%;
+  padding-top: 20px;
+}
+.head__mainimg {
+  float: right;
+  margin-top: -645px;
+  width: 42%;
+}
+.head__btn {
+  margin-top: 70px;
+  margin-bottom: 112px;
+}
+.head__end img {
+  width: 140%;
+  margin-left: -80px;
+}
+
+@media (max-width: 1440px) {
+  .head__mainimg {
+    width: 50%;
+    margin-top: -550px;
+  }
+  .head__end img {
+    width: 112.5%;
+  }
+}
+.collections__top {
+  display: grid;
+  grid-template: 1fr/1fr 70px 70px;
+  align-items: center;
+}
+.collections__more {
+  font-size: 20px;
+  font-family: "PoppinsR";
+}
+.collections__items {
+  margin-top: 20px;
+  display: grid;
+  column-gap: 180px;
+  row-gap: 25px;
+  grid-template: 450px 450px/290px 290px 290px 290px;
+}
+.collections__items_bigimg {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.collections__items_bigimg img {
+  width: 90%;
+}
+@media (max-width: 1440px) {
+  .collections .collections__items {
+    column-gap: 60px;
+    row-gap: 75px;
+    grid-template: 350px 350px/270px 270px 270px 270px;
+  }
+  .collections .collections__items_bigimg {
+    width: 100%;
+  }
+  .collections .collections__item {
+    grid-template: 290px 1fr minmax(25px, auto)/1fr;
+  }
+  .collections .collections__item img {
+    width: 100%;
+  }
+}
+.collections__buy {
+  display: grid;
+  grid-template: 1fr/240px 1fr;
+}
+.collections__item {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: 340px 1fr minmax(25px, auto)/1fr;
+  row-gap: 10px;
+}
+.collections__image img {
+  width: 110%;
+}
+.collections__name {
+  font-size: 21px;
+  font-family: "PoppinsR";
+  text-decoration: none;
+  color: #1C1C1C;
+}
+.collections__price {
+  font-size: 19px;
+  font-family: "PoppinsR";
+  text-decoration: none;
+  color: #1C1C1C;
+}
+
+.products {
+  background-color: #2B2B2B;
+  padding-top: 100px;
+}
+.products__title {
+  font-size: 56px;
+  font-family: "Wano-Quin";
+  color: #ffffff;
+  font-weight: 500;
+}
+.products__subtitle {
+  font-size: 20px;
+  font-family: "PoppinsL";
+  color: #ffffff;
+  margin-top: -20px;
+}
+.products__arrow {
+  margin-left: 91%;
+  margin-top: -65px;
+  cursor: pointer;
+}
+.products__items {
+  margin-top: 65px;
+  margin-bottom: 171px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.products__buy {
+  display: grid;
+  grid-template: 1fr/320px 1fr;
+}
+.products__buy img {
+  width: 40%;
+}
+.products__item {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: 415px 1fr minmax(25px, auto)/1fr;
+  row-gap: -10px;
+}
+@media (max-width: 1440px) {
+  .products__item {
+    grid-template: 315px 1fr minmax(25px, auto)/1fr;
+  }
+  .products__buy {
+    grid-template: 1fr/235px 1fr;
+  }
+  .products__buy img {
+    width: 40%;
+  }
+}
+.products__image img {
+  width: 88%;
+}
+.products__name {
+  font-size: 21px;
+  font-family: "PoppinsR";
+  text-decoration: none;
+  color: #ffffff;
+}
+.products__price {
+  font-size: 19px;
+  font-family: "PoppinsL";
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.categories__title {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.categories__items {
+  display: grid;
+  grid-template: 1fr/1fr 1fr 1fr 1fr 1fr;
+}
+.categories__item {
+  text-align: center;
+}
+.categories__image img {
+  width: 85%;
+}
+.categories__name {
+  font-size: 21px;
+  font-family: "PoppinsR";
+  text-decoration: none;
+  color: #1C1C1C;
+}
+.categories a:hover {
+  color: #1C1C1C;
+  font-size: 20px;
+  color: #d39c4a;
+}
+
+.info {
+  background-color: #fff;
+}
+.info__items {
+  display: grid;
+  grid-template: 92px 238px 270px 259px 88px/20% 16% 20% 20% 18.2%;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+.info__item_big {
+  grid-column: span 2;
+  grid-row: span 2/4;
+}
+.info__item_big img {
+  width: 100%;
+}
+.info__item_p2 {
+  grid-column: 3/4;
+}
+.info__item_p2 img {
+  width: 100%;
+}
+.info__item_p3 {
+  grid-area: 3/3/4/4;
+  align-self: center;
+  justify-self: center;
+}
+.info__item_p3 img {
+  width: 100%;
+}
+.info__item_p4 {
+  grid-area: 4/3/6/4;
+}
+.info__item_p4 img {
+  width: 100%;
+}
+.info__itemother {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 25px;
+  margin-top: 117px;
+}
+.info__itemother img {
+  width: 198.5%;
+}
+@media (max-width: 1440px) {
+  .info__itemother {
+    row-gap: 35px;
+  }
+  .info__itemother img {
+    width: 190.5%;
+    height: 103%;
+  }
+  .info__items {
+    grid-template: 92px 140px 270px 135px 97px/20% 16% 20% 20% 16%;
+  }
+}
+.info__text {
+  font-size: 22px;
+  font-family: "PoppinsL";
+  color: #888888;
+}
+.info__name {
+  font-size: 24px;
+  font-family: "PoppinsL";
+  color: #1C1C1C;
+  text-decoration: none;
+}
+.info__arrow {
+  text-decoration: none;
+}
+.info__arrow img {
+  width: 6%;
+}
+
+.footer {
+  background-color: #2A2A2A;
+  background-color: cover;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -50px;
+  padding: 30px 75px 30px 75px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template: 1fr/1fr minmax(auto, 637px) 1fr;
+}
+.footer__logo {
+  justify-self: start;
+  grid-column: 1/2;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-template: 40px/80px;
+  font-size: 23px;
+  font-family: "PoppinsR";
+  color: #ffffff;
+}
+.footer__logo img {
+  width: 65%;
+}
+.footer__txt {
+  font-size: 14px;
+  font-family: "PoppinsL";
+  color: #ffffff;
+}
+.footer__icons {
+  display: grid;
+  grid-template: 1fr/40px 40px 40px;
+  justify-self: end;
+}
